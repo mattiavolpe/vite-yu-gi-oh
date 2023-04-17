@@ -52,6 +52,10 @@ export const state = reactive(
         console.error(error.message);
       })
     },
+    /**
+     * Returns the types of cards fetched with the API call
+     * @param {array} cards The array of fetched cards
+     */
     retrieveTypes(cards) {
       cards.forEach(card => {
         if(!this.types.includes(card.type)) {

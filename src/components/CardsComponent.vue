@@ -19,9 +19,3 @@ export default {
     <CardItem v-if="state.cards != []" v-show="card.type === state.filter || state.filter === ''" v-for="card in state.cards" :card="card"></CardItem>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.cardsComponent {
-  background-color: white;
-}
-</style>

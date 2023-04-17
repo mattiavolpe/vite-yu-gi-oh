@@ -26,9 +26,3 @@ export default {
 <template>
   <h5 class="counterComponent p-3 bg-dark text-light">Found {{ retrieveFilteredCardsNumber() }} cards</h5>
 </template>
-
-<style lang="scss" scoped>
-.counterComponent {
-  margin: 0px -12px;
-}
-</style>
