@@ -8,6 +8,7 @@ export const state = reactive(
     numberOfCards: null,
     startingCard: 0,
     types: [],
+    filter: "",
     /**
      * Makes a first call to the API to retrieve the total number of cards
      * @param {string} apiToFetch The URL to call with Axios

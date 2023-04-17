@@ -23,7 +23,7 @@ export default {
   <div class="container">
     <h2 class="text-center py-4">50 random cards showcase</h2>
     <FilterComponent v-if="state.cards != []" :cards="state.cards"></FilterComponent>
-    <CounterComponent v-if="state.cards != []" :cards="state.cards"></CounterComponent>
+    <CounterComponent v-if="state.cards != []"></CounterComponent>
     <CardsComponent></CardsComponent>
   </div>
 </main>
