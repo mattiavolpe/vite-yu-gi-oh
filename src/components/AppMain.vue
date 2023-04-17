@@ -21,7 +21,7 @@ export default {
 <template>
 <main>
   <div class="container">
-    <h2 class="text-center my-4">50 random cards showcase</h2>
+    <h2 class="text-center py-4">50 random cards showcase</h2>
     <FilterComponent v-if="state.cards != []" :cards="state.cards"></FilterComponent>
     <CounterComponent v-if="state.cards != []" :cards="state.cards"></CounterComponent>
     <CardsComponent></CardsComponent>
@@ -29,7 +29,7 @@ export default {
 </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "./../assets/scss/app.scss" as *;
 main {
   background-color: $primary;

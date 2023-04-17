@@ -12,6 +12,7 @@ export default {
 
 <template>
   <select class="rounded">
+    <option value="">Select a filter</option>
     <option v-for="item in state.types" value="item">{{ item }}</option>
   </select>
 </template>
