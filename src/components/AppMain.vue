@@ -19,11 +19,13 @@ export default {
 </script>
 
 <template>
-<main>
+<main class="bg-dark">
   <div class="container">
-    <h2 class="text-center py-4 text-uppercase m-0">50 random cards showcase</h2>
-    <FilterComponent v-if="state.cards != []" :cards="state.cards"></FilterComponent>
-    <CounterComponent v-if="state.cards != []"></CounterComponent>
+    <h2 class="text-center py-4 text-uppercase m-0 text-light">50 random cards showcase</h2>
+    <div class="d-flex align-items-center">
+      <FilterComponent v-if="state.cards != []" :cards="state.cards"></FilterComponent>
+      <CounterComponent v-if="state.cards != []"></CounterComponent>
+    </div>
     <CardsComponent></CardsComponent>
   </div>
 </main>

@@ -6,7 +6,7 @@ export default {
 
 <template>
 <header>
-  <div class="container-xxl p-3 d-flex align-items-center justify-content-center flex-wrap">
+  <div class="container-xxl p-3 d-flex align-items-center justify-content-center flex-wrap bg-light text-dark">
     <img width="150" src="./../assets/img/Yu-Gi-Oh_Logo.webp" alt="Yu-Gi-Oh logo">
     <h1 class="m-0 ms-3">Yu-Gi-Oh Cards</h1>
   </div>

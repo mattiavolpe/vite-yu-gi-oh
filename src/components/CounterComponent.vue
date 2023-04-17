@@ -24,5 +24,5 @@ export default {
 </script>
 
 <template>
-  <h5 class="counterComponent p-3 bg-dark text-light">Found {{ retrieveFilteredCardsNumber() }} cards</h5>
+  <h5 class="counterComponent p-3 m-0 text-light">Found {{ retrieveFilteredCardsNumber() }} cards</h5>
 </template>
