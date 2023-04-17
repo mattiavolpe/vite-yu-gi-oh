@@ -17,11 +17,9 @@ export const state = reactive(
     retrieveNumberOfCards(apiToFetch) {
       axios.get(apiToFetch)
       .then(response => {
-        console.log(response.data);
         this.numberOfCards = response.data.data.length;
         this.startingCard = this.generateStartingCard(this.numberOfCards);
         this.fetchCardsToUse(this.startingCard, this.apiUrl);
-        console.log(this.startingCard);
       })
       .catch(error => {
         console.error(error.message);
@@ -46,7 +44,6 @@ export const state = reactive(
       .then(response => {
         this.cards = response.data.data;
         this.retrieveTypes(this.cards);
-        console.log(this.cards);
       })
       .catch(error => {
         console.error(error.message);
