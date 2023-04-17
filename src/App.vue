@@ -1,9 +1,11 @@
 <script>
 import { state } from "./state.js"
 import AppHeader from "./components/AppHeader.vue"
+import AppMain from "./components/AppMain.vue"
 export default {
   components: {
     AppHeader,
+    AppMain,
   },
   data() {
     return {
@@ -11,7 +13,7 @@ export default {
     }
   },
   created() {
-    this.state.fetchCards(this.state.apiUrl);
+    this.state.retrieveNumberOfCards(this.state.apiUrl);
   }
 }
 </script>

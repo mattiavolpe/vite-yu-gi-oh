@@ -12,5 +12,3 @@ export default {
   </div>
 </header>
 </template>
-
-<style></style>
