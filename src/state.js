@@ -31,7 +31,12 @@ export const state = reactive(
      * @returns {number} A random number between 0 and the total number of cards - 50. -50 because we want to show 50 items on our page
      */
     generateStartingCard(totalCards) {
-      const startingCard = Math.floor(Math.random() * ((totalCards - 50) + 1));
+      let startingCard = 0;
+      if (totalCards >= 50) {
+        startingCard = Math.floor(Math.random() * (totalCards - 50));
+      } else {
+        startingCard = 0;
+      }
       return startingCard;
     },
     /**
@@ -40,14 +45,25 @@ export const state = reactive(
      * @param {string} api The URL to call with Axios
      */
     fetchCardsToUse(number, api) {
-      axios.get(`${api}?num=50&offset=${number}`)
-      .then(response => {
-        this.cards = response.data.data;
-        this.retrieveTypes(this.cards);
-      })
-      .catch(error => {
-        console.error(error.message);
-      })
+      if (this.numberOfCards >= 50) {
+        axios.get(`${api}?num=50&offset=${number}`)
+        .then(response => {
+          this.cards = response.data.data;
+          this.retrieveTypes(this.cards);
+        })
+        .catch(error => {
+          console.error(error.message);
+        })
+      } else {
+        axios.get(`${api}?num=${this.numberOfCards}&offset=0`)
+        .then(response => {
+          this.cards = response.data.data;
+          this.retrieveTypes(this.cards);
+        })
+        .catch(error => {
+          console.error(error.message);
+        })
+      }
     },
     /**
      * Returns the types of cards fetched with the API call
