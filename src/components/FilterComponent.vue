@@ -11,8 +11,8 @@ export default {
 </script>
 
 <template>
-  <select v-model="state.filter" class="rounded">
-    <option value="">Select a filter</option>
+  <select v-model="state.filter" class="rounded my-2">
+    <option value="">--- Select a filter ---</option>
     <option v-for="item in state.types" :value="item">{{ item }}</option>
   </select>
 </template>

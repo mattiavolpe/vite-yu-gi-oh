@@ -29,6 +29,6 @@ export default {
 
 <style lang="scss" scoped>
 .counterComponent {
-  margin: 16px -12px;
+  margin: 0px -12px;
 }
 </style>

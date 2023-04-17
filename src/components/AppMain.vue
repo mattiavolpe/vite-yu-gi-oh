@@ -33,5 +33,6 @@ export default {
 @use "./../assets/scss/app.scss" as *;
 main {
   background-color: $primary;
+  padding-bottom: 1rem;
 }
 </style>

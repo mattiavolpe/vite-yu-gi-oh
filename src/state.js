@@ -9,6 +9,7 @@ export const state = reactive(
     startingCard: 0,
     types: [],
     filter: "",
+    loading: true,
     /**
      * Makes a first call to the API to retrieve the total number of cards
      * @param {string} apiToFetch The URL to call with Axios
@@ -44,20 +45,20 @@ export const state = reactive(
       axios.get(`${api}?num=50&offset=${number}`)
       .then(response => {
         this.cards = response.data.data;
-        this.retrieveArchetypes(this.cards);
+        this.retrieveTypes(this.cards);
         console.log(this.cards);
       })
       .catch(error => {
         console.error(error.message);
       })
     },
-    retrieveArchetypes(cards) {
+    retrieveTypes(cards) {
       cards.forEach(card => {
         if(!this.types.includes(card.type)) {
           this.types.push(card.type)
         }
       })
-      console.log(this.types);
+      this.loading = false;
     }
   }
 )
