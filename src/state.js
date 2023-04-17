@@ -59,6 +59,7 @@ export const state = reactive(
           this.types.push(card.type)
         }
       })
+      this.types.sort((a, b) => a > b ? 1 : -1);
       this.loading = false;
     }
   }
