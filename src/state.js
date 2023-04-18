@@ -15,6 +15,7 @@ export const state = reactive(
      * @param {string} apiToFetch The URL to call with Axios
      */
     retrieveNumberOfCards(apiToFetch) {
+      this.loading = true;
       axios.get(apiToFetch)
       .then(response => {
         this.numberOfCards = response.data.data.length;
@@ -58,6 +59,10 @@ export const state = reactive(
         console.error(error.message);
       })
     },
+    /**
+     * Make another API call to retrieve cards filtered by archetype
+     * @param {string} filter The archetype that is selected and that we want to append to the API string as a query parameter
+     */
     filterByArchetype(filter) {
       this.loading = true;
       if (filter === "") {
