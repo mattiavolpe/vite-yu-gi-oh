@@ -38,7 +38,8 @@ export default {
 <template>
 <main class="bg-dark">
   <div class="container">
-    <h2 class="text-center py-4 text-uppercase m-0 text-light">50 random cards showcase</h2>
+    <h2 v-if="state.filter == ''" class="text-center py-4 text-uppercase m-0 text-light">50 random cards showcase</h2>
+    <h2 v-else class="text-center py-4 text-uppercase m-0 text-light">{{ state.filter }} cards showcase</h2>
     <div class="d-flex align-items-center">
       <FilterComponent @changeArchetype="state.filterByArchetype(state.filter)" v-if="state.cards != []" :archetypes="archetypes"></FilterComponent>
       <CounterComponent v-if="state.cards != []"></CounterComponent>
