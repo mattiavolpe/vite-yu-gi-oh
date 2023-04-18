@@ -58,5 +58,20 @@ export const state = reactive(
         console.error(error.message);
       })
     },
+    filterByArchetype(filter) {
+      this.loading = true;
+      if (filter === "") {
+        this.retrieveNumberOfCards(this.apiCardsUrl);
+      } else {
+        axios.get(`${this.apiCardsUrl}?archetype=${filter}`)
+        .then(response => {
+          this.cards = response.data.data;
+          this.loading = false;
+        })
+        .catch(error => {
+          console.error(error.message);
+        })
+      }
+    }
   }
 )
