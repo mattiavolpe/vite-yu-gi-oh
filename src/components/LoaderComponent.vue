@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-center bg-light text-dark">
+  <div class="loader_component text-center bg-light text-dark">
     <img class="w-25" src="./../assets/img/Yu-Gi-Oh_Logo.webp" alt="Yu-Gi-Oh logo">
     <h2 class="py-3 mb-0">Loading content
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">

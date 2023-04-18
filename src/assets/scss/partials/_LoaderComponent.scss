@@ -1,15 +1,17 @@
-svg {
-  width: 2rem;
-  animation: rotate 1s infinite linear;
+.loader_component {
+  padding-top: 2rem;
+
+  svg {
+    width: 2rem;
+    animation: rotate 1s infinite linear;
+  }
 }
 
 @keyframes rotate {
-
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
-  }
-  
+  }  
 }
