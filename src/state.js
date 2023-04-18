@@ -3,13 +3,14 @@ import axios from "axios"
 
 export const state = reactive(
   {
-    apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php",
+    apiCardsUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php",
     cards: [],
     numberOfCards: null,
     startingCard: 0,
     types: [],
     filter: "",
     loading: true,
+    archetypes: [],
     /**
      * Makes a first call to the API to retrieve the total number of cards
      * @param {string} apiToFetch The URL to call with Axios
@@ -19,7 +20,7 @@ export const state = reactive(
       .then(response => {
         this.numberOfCards = response.data.data.length;
         this.startingCard = this.generateStartingCard(this.numberOfCards);
-        this.fetchCardsToUse(this.startingCard, this.apiUrl);
+        this.fetchCardsToUse(this.startingCard, this.apiCardsUrl);
       })
       .catch(error => {
         console.error(error.message);

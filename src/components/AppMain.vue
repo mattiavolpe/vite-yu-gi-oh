@@ -1,5 +1,6 @@
 <script>
 import { state } from "./../state.js"
+import axios from "axios"
 import FilterComponent from "./FilterComponent.vue"
 import CounterComponent from "./CounterComponent.vue"
 import CardsComponent from "./CardsComponent.vue"
@@ -13,7 +14,23 @@ export default {
   data() {
     return {
       state,
+      apiArchetypesUrl: "https://db.ygoprodeck.com/api/v7/archetypes.php",
+      archetypes: [],
     }
+  },
+  methods: {
+    retrieveArchetypes(url) {
+      axios.get(url)
+      .then(response => {
+        this.archetypes = response.data;
+      })
+      .catch(error => {
+        console.error(error.message);
+      })
+    }
+  },
+  mounted() {
+    this.retrieveArchetypes(this.apiArchetypesUrl);
   }
 }
 </script>
@@ -23,7 +40,7 @@ export default {
   <div class="container">
     <h2 class="text-center py-4 text-uppercase m-0 text-light">50 random cards showcase</h2>
     <div class="d-flex align-items-center">
-      <FilterComponent v-if="state.cards != []" :cards="state.cards"></FilterComponent>
+      <FilterComponent v-if="state.cards != []" :archetypes="archetypes"></FilterComponent>
       <CounterComponent v-if="state.cards != []"></CounterComponent>
     </div>
     <CardsComponent></CardsComponent>

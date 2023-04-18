@@ -17,7 +17,7 @@ export default {
     }
   },
   created() {
-    this.state.retrieveNumberOfCards(this.state.apiUrl);
+    this.state.retrieveNumberOfCards(this.state.apiCardsUrl);
   }
 }
 </script>
