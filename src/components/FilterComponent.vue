@@ -2,6 +2,7 @@
 import { state } from "./../state.js"
 export default {
   name: "FilterComponent",
+  emits: ["changeArchetype"],
   data() {
     return {
       state,
