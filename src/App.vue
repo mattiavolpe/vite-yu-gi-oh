@@ -25,8 +25,8 @@ export default {
 <template>
 
   <AppHeader></AppHeader>
-  <AppMain v-if="!state.loading"></AppMain>
-  <LoaderComponent v-else></LoaderComponent>
+  <LoaderComponent v-if="state.loading"></LoaderComponent>
+  <AppMain v-else></AppMain>
   <AppFooter></AppFooter>
 
 </template>

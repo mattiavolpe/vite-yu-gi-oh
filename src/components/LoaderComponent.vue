@@ -15,21 +15,3 @@ export default {
     </h2>
   </div>
 </template>
-
-<style lang="scss" scoped>
-svg {
-  width: 2rem;
-  animation: rotate 1s infinite linear;
-}
-
-@keyframes rotate {
-
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-  
-}
-</style>
