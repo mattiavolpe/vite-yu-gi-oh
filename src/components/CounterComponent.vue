@@ -9,15 +9,7 @@ export default {
   },
   methods: {
     retrieveFilteredCardsNumber() {
-      let filteredCards = 0;
-      if (this.state.filter != "") {
-        state.cards.forEach(card => {
-          card.type === this.state.filter ? filteredCards++ : "";
-        })
-        return filteredCards;
-      } else {
-        return this.state.cards.length;
-      }
+      return this.state.cards.length;
     }
   }
 }

@@ -27,6 +27,21 @@ export default {
       .catch(error => {
         console.error(error.message);
       })
+    },
+    filterArchetype(filter) {
+      if (filter === "") {
+        this.state.retrieveNumberOfCards(this.state.apiCardsUrl);
+      } else {
+        console.log("FILTERED");
+        axios.get(`${this.state.apiCardsUrl}?archetype=${filter}`)
+        .then(response => {
+          console.log(response.data.data);
+          this.state.cards = response.data.data;
+        })
+        .catch(error => {
+          console.error(error.message);
+        })
+      }
     }
   },
   mounted() {
@@ -40,7 +55,7 @@ export default {
   <div class="container">
     <h2 class="text-center py-4 text-uppercase m-0 text-light">50 random cards showcase</h2>
     <div class="d-flex align-items-center">
-      <FilterComponent v-if="state.cards != []" :archetypes="archetypes"></FilterComponent>
+      <FilterComponent @changeArchetype="filterArchetype(state.filter)" v-if="state.cards != []" :archetypes="archetypes"></FilterComponent>
       <CounterComponent v-if="state.cards != []"></CounterComponent>
     </div>
     <CardsComponent></CardsComponent>

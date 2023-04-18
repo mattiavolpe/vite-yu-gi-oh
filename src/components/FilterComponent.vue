@@ -14,8 +14,8 @@ export default {
 </script>
 
 <template>
-  <select v-model="state.filter" class="rounded">
-    <option value="">--- Select a filter ---</option>
-    <option v-for="item in archetypes" :value="item.archetype_name">{{ item.archetype_name }}</option>
+  <select v-model="state.filter" class="rounded" @change="$emit('changeArchetype')">
+    <option value="" selected>--- Select a filter ---</option>
+    <option v-for="archetype in archetypes" :value="archetype.archetype_name">{{ archetype.archetype_name }}</option>
   </select>
 </template>
